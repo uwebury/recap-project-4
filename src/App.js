@@ -14,10 +14,19 @@ function App() {
   });
 
   function handleAddActivity(data) {
-    console.log(data);
     data.id = uid();
     setActivities([...activities, data]);
   }
+
+  function handleDeleteActivity({ id }) {
+    console.log(id);
+    setActivities(
+      activities.filter((activity) => {
+        return activity.id !== id;
+      })
+    );
+  }
+
   useEffect(() => {
     async function loadWeather() {
       const response = await fetch(
@@ -39,6 +48,7 @@ function App() {
         <List
           activities={filteredActivities}
           isGoodWeather={weather.isGoodWeather}
+          onDeleteActivity={handleDeleteActivity}
         />
         <Form onAddActivity={handleAddActivity}></Form>
       </div>
