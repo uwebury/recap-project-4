@@ -1,7 +1,8 @@
 import Form from "./components/Form";
 import useLocalStorageState from "use-local-storage-state";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { uid } from "uid";
+import List from "./components/List";
 
 function App() {
   const [activities, setActivities] = useLocalStorageState("activities", {
@@ -14,6 +15,7 @@ function App() {
   }
   return (
     <div className="App">
+      <List activities={activities} />
       <Form onAddActivity={handleAddActivity}></Form>
     </div>
   );
