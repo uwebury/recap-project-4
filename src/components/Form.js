@@ -3,7 +3,12 @@ export default function Form({ onAddActivity }) {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-    onAddActivity(data);
+    const activityname = data.activityname;
+    const goodweatheractivity = data.goodweatheractivity == "on" ? true : false;
+    {
+      /* Hätten wir hier auch mit .checked arbeiten können? */
+    }
+    onAddActivity({ activityname, goodweatheractivity });
     const form = event.target.elements;
     form.activityname.value = "";
     form.goodweatheractivity.checked = false;
@@ -11,7 +16,7 @@ export default function Form({ onAddActivity }) {
   }
   return (
     <>
-      <h1>Add new activity</h1>
+      <h2>Add new activity</h2>
       <form onSubmit={handleAddActivity}>
         <label htmlFor="activityname">Name</label>
         <input type="text" id="activityname" name="activityname"></input>
