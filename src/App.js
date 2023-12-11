@@ -44,14 +44,31 @@ function App() {
   useEffect(() => {
     async function loadWeather() {
       const response = await fetch(
-        "https://example-apis.vercel.app/api/weather/rainforest"
+        "https://example-apis.vercel.app/api/weather/europe"
       );
       const data = await response.json();
       setWeather(data);
     }
 
-    loadWeather();
+    loadWeather() // The function call /'run'
+
+    //-----Bonus:--Fetch-on-Intervall-------//
+    // The setInterval() method fetches our weather api data we get from the url in an interval
+    // and the 5000 is the delay (in milliseconds) in which this interval happens (in this case every 5 seconds)
+    const fetchTimer = setInterval(loadWeather, 5000); 
+
+    // The clearInterval() method clears a timed repeating action 
+    // which was previously established by a call to setInterval()
+    return () => clearInterval(fetchTimer);
   }, []);
+  
+  
+  
+  
+  
+  
+    //   loadWeather();
+  // }, []);
   //The return statement renders the whole content of the app by calling other components.
   return (
     <>
