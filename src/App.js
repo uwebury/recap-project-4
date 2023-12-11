@@ -3,9 +3,11 @@ import useLocalStorageState from "use-local-storage-state";
 import { useEffect, useState } from "react";
 import { uid } from "uid";
 import List from "./components/List";
+import "./App.css";
 
 // This component renders the whole app.
 function App() {
+  
   // This variable is the state activities. It can be modified with setActivities. The default value of the state is an empty array.
   // We call the useLocalStorageState hook to create the state activity.
   const [activities, setActivities] = useLocalStorageState("activities", {
@@ -76,12 +78,13 @@ function App() {
         {weather.condition} {weather.temperature}° C
       </h1>
       <div className="App">
+      <Form onAddActivity={handleAddActivity}></Form>
         <List
           activities={filteredActivities}
           isGoodWeather={weather.isGoodWeather}
           onDeleteActivity={handleDeleteActivity}
         />
-        <Form onAddActivity={handleAddActivity}></Form>
+        
       </div>
     </>
   );

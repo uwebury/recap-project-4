@@ -1,3 +1,5 @@
+import "../App.css";
+
 export default function Form({ onAddActivity }) {
   // This function handles the form elements.
   // It needs information about the event. Because of that it needs event as an argument in brackets.
@@ -26,18 +28,19 @@ export default function Form({ onAddActivity }) {
   return (
     <>
       <h2>Add new activity</h2>
-      <form onSubmit={handleAddActivity}>
-        <label htmlFor="activityname">Name</label>
-        <input type="text" id="activityname" name="activityname"></input>
-        <br></br>
-        {/* Break will be removed later */}
-        <label htmlFor="goodweatheractivity">Good weather activity</label>
-        <input
+      <form className="activityImput" onSubmit={handleAddActivity}>
+        <label htmlFor="activityname">Name:</label>
+        <input placeholder="New Activity" className="input" type="text" id="activityname" name="activityname"></input>
+        
+        <div className="goodWeatherCheck">
+        <label  htmlFor="goodweatheractivity">Good weather activity</label>
+        <input className="input"
           type="checkbox"
           id="goodweatheractivity"
           name="goodweatheractivity"
         ></input>
-        <button type="submit">Submit</button>
+        </div>
+        <button  className="submitButton" type="submit">Submit</button>
       </form>
     </>
   );

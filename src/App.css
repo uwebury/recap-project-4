@@ -1,0 +1,94 @@
+
+* {
+  box-sizing: border-box;
+  
+}
+
+
+
+body {
+    display: flex;
+    width: 60%;
+    margin: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgba(255, 255, 255, 0);
+    
+}
+
+h1 {
+font-size: 4rem;
+text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+    
+}
+
+li {
+    position: relative;   
+    border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 0.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: rgb(238, 234, 234);
+
+}
+
+li:hover {
+    background-color: rgb(207, 205, 205);
+}
+
+.deleteButton {
+position: absolute;
+right: 10px;
+background-color: darkcyan;
+color: white;
+border-radius: 0.3rem;
+border: none;
+margin: 5px;
+top: 5px;
+
+}
+
+.activityImput {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    background-color: rgb(238, 234, 234);
+    border-radius: 0.3rem;
+    padding: 10px;
+}
+
+.input {
+     padding: 7px;
+    border-radius: 0.3rem;
+    margin-bottom: 25px;
+    
+}
+
+
+.goodWeatherCheck {
+   
+   text-align: center;
+
+}
+
+.submitButton {
+    border: none;
+    padding: 10px;
+    background-color: darkcyan;
+    color: white;
+    border-radius: 0.3rem;
+}
+
+label {
+    padding: 5px;
+}
